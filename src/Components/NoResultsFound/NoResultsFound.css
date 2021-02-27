@@ -1,0 +1,7 @@
+.no-results-container {
+    flex: 0 1 25%;
+}
+
+.inner-heading {
+    align-self: flex-start;
+}

@@ -1,7 +1,7 @@
 /* flex-item settings for the entire section container
 where the retrieved volumes are rendered. */
 .section-container {
-    flex: 0 1 25%;
+    flex: 0 1 5%;
 }
 
 /* flex-item settings; div container for the volume title, author, and published year */

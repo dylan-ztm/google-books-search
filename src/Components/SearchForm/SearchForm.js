@@ -73,26 +73,13 @@ class SearchForm extends Component {
       } // end validateUserInput
 
     render() {
-      const {query, maxResults} = this.state;
+      const {query} = this.state;
       const {validateUserInput, handleInputChange} = this;
         return (
             <React.Fragment>
-                <form className="flex flex-wrap justify-between items-center pa1" onSubmit={validateUserInput}>
-                    <input type="text" name="query" value={query} onChange={handleInputChange} />
-                      
-                    
-                    <div className="flex flex-column">
-                      <label htmlFor="maxResults"> Number of results: &nbsp; </label>
-                        <select value={maxResults} id="maxResults" name="maxResults" onChange={handleInputChange}>
-                          <option value="10">10 </option>
-                          <option value="20">20 </option>
-                          <option value="30">30 </option>
-                          <option value="40">40 </option>
-                        </select>
-                    </div>
-                    
-
-                    <input type="submit" value="Search" />
+                <form className="form-wrapper flex justify-around items-center w-75" onSubmit={validateUserInput}>
+                        <input type="text" name="query" value={query} onChange={handleInputChange} />
+                        <input type="submit" value="Search" />
                 </form>
             </React.Fragment>
         );
@@ -100,3 +87,14 @@ class SearchForm extends Component {
 } // end SearchForm
 
 export default SearchForm;
+
+/* Removing drop-down menu selection for now.  Original HTML listed below:
+
+<label htmlFor="maxResults"> Number of results: &nbsp; </label>
+                        <select value={maxResults} id="maxResults" name="maxResults" onChange={handleInputChange}>
+                          <option value="10">10 </option>
+                          <option value="20">20 </option>
+                          <option value="30">30 </option>
+                          <option value="40">40 </option>
+                        </select>
+*/

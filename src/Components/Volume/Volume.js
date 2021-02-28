@@ -83,31 +83,8 @@ const Volume = ( {volume} ) => {
     } // end else
     
 
-
-    /* 1. First div container
-            1) Generate and render full title.
-            2) Generate and render first author name and published year.
-               Validate authors array. Published year validated using formatPublishedYear function
-
-        2. Second div container
-            1) Add thumbnail to container.
-            2) Add textSnippet right after thumbnail
-
-        3. Adjust and configure flex container/flex items, spacing, and sizes.
-
-        3. Integrate empty string checks
-
-        4. Integrate previewLink into full title -CHECK FOR EMPTY STRING
-
-        5. Intergrate Decoder function
-
-       
-
-        6. Add CSS styles to Volumes.css file
-    */
-
     return (
-        <section className="flex flex-column items-center w-90 section-container ba bw1 bg-washed-red">
+        <section className="flex flex-column items-center w-90 section-container ma1 pb2 ba br3 b--black-10 shadow-1">
             <div className="w-90 title-container">
                 {fullTitleElement}
                 <p>{ `${firstAuthor} ${delimiter} ${publishedYear}` }</p>

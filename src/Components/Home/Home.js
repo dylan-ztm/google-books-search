@@ -7,7 +7,7 @@ import NoResultsFound from '../NoResultsFound/NoResultsFound';
 import Tagline from '../Tagline/Tagline';
 
 const HEADER_TEXT       = 'Search Google Books';
-const TAGLINE_TEXT      = 'Enjoy your Google Book search.';
+const TAGLINE_TEXT      = 'One book can change your life.';
 const INITIAL_STATE = {
     volumes: [],
     searchErrorFound: false,
@@ -82,18 +82,19 @@ class Home extends Component {
         
         return (
             <div className="MainContentWrapper flex flex-column w-100 justify-start items-center bg-white">
-                <MainHeader headerText={HEADER_TEXT} />
-                <SearchForm 
-                        setVolumes={setVolumes} 
-                        handleSearchErrorFound={handleSearchErrorFound} 
-                />
-                <Tagline taglineText={TAGLINE_TEXT} />
-
-                {
-                    searchErrorFound === true
-                    ? <NoResultsFound />
-                    : <VolumeList volumes={volumes} />
-                }
+                    <MainHeader headerText={HEADER_TEXT} />
+                    <SearchForm 
+                            setVolumes={setVolumes} 
+                            handleSearchErrorFound={handleSearchErrorFound} 
+                    />
+                    <Tagline taglineText={TAGLINE_TEXT} />
+                
+                    {
+                        searchErrorFound === true
+                        ? <NoResultsFound />
+                        : <VolumeList volumes={volumes} />
+                    }
+                
             </div>
         );
     } // end render

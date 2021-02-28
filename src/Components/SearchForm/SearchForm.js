@@ -6,7 +6,7 @@ import extractVolumeData from '../../Utilities/data-handlers';
 const INITIAL_QUERY_STATE = '';
 const INITIAL_STATE = {
     query: INITIAL_QUERY_STATE,
-    maxResults: 10,
+    maxResults: 40,
 }
 
 // SearchForm

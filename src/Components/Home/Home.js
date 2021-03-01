@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Home.css';
+import '../../Components/MainContent.css';
 import MainHeader from '../MainHeader/MainHeader';
 import SearchForm from '../SearchForm/SearchForm';
 import VolumeList from '../VolumeList/VolumeList';
@@ -13,7 +13,7 @@ const INITIAL_STATE = {
     searchErrorFound: false,
 };
 
-// Home
+// Home Page
 class Home extends Component {
     state = INITIAL_STATE;
 
@@ -81,7 +81,7 @@ class Home extends Component {
         
         
         return (
-            <div className="MainContentWrapper flex flex-column w-100 justify-start items-center bg-white">
+            <div className="MainContentWrapper flex flex-column w-100 items-center bg-white">
                     <MainHeader headerText={HEADER_TEXT} />
                     <SearchForm 
                             setVolumes={setVolumes} 

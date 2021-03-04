@@ -1,6 +1,6 @@
 /* flex-item settings for the entire section container
 where the retrieved volumes are rendered. */
-.section-container {
+.volume-container {
     flex: 0 1 5%;
 }
 

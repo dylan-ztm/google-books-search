@@ -84,7 +84,7 @@ const Volume = ( {volume} ) => {
     
 
     return (
-        <section className="flex flex-column items-center w-90 section-container ma1 pb2 ba br3 b--black-10 shadow-1">
+        <section className="flex flex-column items-center w-90 volume-container ma1 pb2 ba br3 b--black-10 shadow-1">
             <div className="w-90 title-container">
                 {fullTitleElement}
                 <p>{ `${firstAuthor} ${delimiter} ${publishedYear}` }</p>

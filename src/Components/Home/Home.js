@@ -94,7 +94,6 @@ class Home extends Component {
                         ? <NoResultsFound />
                         : <VolumeList volumes={volumes} />
                     }
-                
             </div>
         );
     } // end render

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
-import Contact from './Components/Contact/Contact';
+//import Contact from './Components/Contact/Contact';
 import NavigationBar from './Components/NavigationBar/NavigationBar';
 import MainFooter from './Components/MainFooter/MainFooter';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
@@ -17,7 +17,7 @@ const App = () => {
         <NavigationBar />
         <Switch>
             <Route exact path="/about"          component={About} />
-            <Route exact path="/contact"        component={Contact} />
+            {/*<Route exact path="/contact"        component={Contact} /> */}
             <Route exact path="/"               component={Home} />
             <Route path="*"                     component={PageNotFound} />
         </Switch>

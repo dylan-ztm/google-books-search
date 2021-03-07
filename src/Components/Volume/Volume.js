@@ -2,22 +2,29 @@ import React from 'react';
 import './Volume.css';
 
 // formatFullTitle
-const formatFullTitle = (title, subtitle) => {
+const formatFullTitle = (title, subtitle, previewLink) => {
     const delimiter = ':';
     const singleSpace = ' ';
-    let newTitle;
+    let newTitle, newTitleElement;
 
     if (title.length > 0 && subtitle.length > 0) {
         newTitle = title + delimiter + singleSpace + subtitle;
-        return newTitle;
-    } //end if
-
-    if (title.length === 0) {
-        return 'No title available for this text.';
-    } else {
+    } else if (title.length === 0) {
+        newTitle = 'No title available for this text.';
+      } // end else if
+    else {
         newTitle = title;
-        return newTitle;
     } //end else
+
+     // Validate the previewLink retrieved from GoogleBooks API
+     if (previewLink.length > 0) {
+        newTitleElement = <p><a href={previewLink} target="_blank" rel="noopener noreferrer"> {newTitle} </a></p>
+        return newTitleElement;
+    } else {
+        newTitleElement = <p>{newTitle}</p> // Do not use previewLink if it has string length of zero.
+        return newTitleElement;
+    } // end else
+
 } // end formatFullTitle
 
 // formatPublishedYear
@@ -44,17 +51,27 @@ const extractFirstAuthor = (authors) => {
     } // end else
 } // end extractFirstAuthor
 
-// extractTextSnippet
-const extractTextSnippet = (textSnippet) => {
-    let extractedTextSnippet;
+// formatDescription
+const formatDescription = (textSnippet) => {
+    let description;
+
+    // function decodeString
+    const decodeString = (str) => {
+        let body = `<div id="id1"> ${str} </div>`;
+        let tempDiv = document.createElement('div');
+        tempDiv.innerHTML = body;
+        let sanitizedText = tempDiv.textContent || tempDiv.innerText;
+        return sanitizedText;
+      } // end decodeString
 
     if (textSnippet.length > 0) {
-        extractedTextSnippet = textSnippet;
-        return extractedTextSnippet;
+        description = decodeString(textSnippet);
+        return description;
     } else {
-        return 'No description available for this text.';
+        description = 'No description available for this text.';
+        return description;
     }
-} // end extractTextSnippet
+} // end formatDescription
 
 // Volume Component
 const Volume = ( {volume} ) => {
@@ -68,21 +85,12 @@ const Volume = ( {volume} ) => {
                 title
         } = volume;
 
-    const fullTitle       = formatFullTitle(title, subtitle);
-    const publishedYear   = formatPublishedYear(publishedDate);
-    const firstAuthor     = extractFirstAuthor(authors);
-    const description     = extractTextSnippet(textSnippet);
-    const delimiter       = '|';
-    let   fullTitleElement;
-
-    // Validate the previewLink retrieved from GoogleBooks API
-    if (previewLink.length > 0) {
-        fullTitleElement = <p><a href={ `${previewLink}` } target="_blank" rel="noopener noreferrer"> {fullTitle} </a></p>
-    } else {
-        fullTitleElement = <p>{fullTitle}</p> // Do not use previewLink if it has string length of zero.
-    } // end else
+    const fullTitleElement       = formatFullTitle(title, subtitle, previewLink);
+    const publishedYear          = formatPublishedYear(publishedDate);
+    const firstAuthor            = extractFirstAuthor(authors);
+    const description            = formatDescription(textSnippet);
+    const delimiter              = '|';
     
-
     return (
         <section className="flex flex-column items-center w-90 volume-container ma1 pb2 ba br3 b--black-10 shadow-1">
             <div className="w-90 title-container">
@@ -95,22 +103,7 @@ const Volume = ( {volume} ) => {
                     <span className="f6 description">{description}</span>
             </div>
         </section>
-    )
+    );
 } // end Volume
 
 export default Volume;
-
-/* May need to use later for debugging. This console logs
-all seven local variables for the volume object.
-
-const tempArray = [ authors, 
-        previewLink, 
-        publishedDate, 
-        subtitle, 
-        textSnippet, 
-        thumbnail,  
-        title];
-    
-    console.log("volume component. destructured properties.");
-    console.log(tempArray);
-*/

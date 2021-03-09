@@ -87,14 +87,3 @@ class SearchForm extends Component {
 } // end SearchForm
 
 export default SearchForm;
-
-/* Removing drop-down menu selection for now.  Original HTML listed below:
-
-<label htmlFor="maxResults"> Number of results: &nbsp; </label>
-                        <select value={maxResults} id="maxResults" name="maxResults" onChange={handleInputChange}>
-                          <option value="10">10 </option>
-                          <option value="20">20 </option>
-                          <option value="30">30 </option>
-                          <option value="40">40 </option>
-                        </select>
-*/

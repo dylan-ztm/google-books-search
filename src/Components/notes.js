@@ -1,3 +1,15 @@
+/* Drop-down menu selection as of 3-8-2021.  Original HTML listed below:
+
+<label htmlFor="maxResults"> Number of results: &nbsp; </label>
+                        <select value={maxResults} id="maxResults" name="maxResults" onChange={handleInputChange}>
+                          <option value="10">10 </option>
+                          <option value="20">20 </option>
+                          <option value="30">30 </option>
+                          <option value="40">40 </option>
+                        </select>
+*/
+
+
 /* handleSubmit method as of 7:00 PM, 2-20-2021
 // handleSubmit method
     handleSubmit = (event) => {

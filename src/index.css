@@ -24,7 +24,6 @@ body {
 
   /*--- Flex Item settings */
   flex: 1 0 auto;
-  background-color: red; /* Remove */
 }
 
 code {

@@ -1,5 +1,5 @@
 /* flex-item settings for the entire section container
-where the retrieved volumes are rendered. */
+where the volume is rendered. */
 .volume-container {
     flex: 0 1 5%;
 }
@@ -16,7 +16,7 @@ where the retrieved volumes are rendered. */
 
 /* flex-item settings for the volume's thumbnail image */
 .thumbnail {
-    height: 75px;
+    max-height: 50%;
     flex: 0 1 15%;
 }
 

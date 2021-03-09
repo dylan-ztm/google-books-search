@@ -92,15 +92,15 @@ const Volume = ( {volume} ) => {
     const delimiter              = '|';
     
     return (
-        <section className="flex flex-column items-center w-90 volume-container ma1 pb2 ba br3 b--black-10 shadow-1">
+        <section className="volume-container flex flex-column items-center w-90 ma1 pb2 ba br3 b--black-10 shadow-1">
             <div className="w-90 title-container">
                 {fullTitleElement}
                 <p>{ `${firstAuthor} ${delimiter} ${publishedYear}` }</p>
             </div>
 
-            <div className="flex justify-between items-start w-90 description-container">
+            <div className="description-container flex justify-between items-start w-90">
                     <img className="thumbnail" src={thumbnail} alt="Book cover" />
-                    <span className="f6 description">{description}</span>
+                    <span className="description f6">{description}</span>
             </div>
         </section>
     );

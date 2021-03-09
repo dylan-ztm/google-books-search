@@ -77,11 +77,10 @@ class Home extends Component {
         const handleSearchErrorFound      = this.handleSearchErrorFound;
         const {volumes, searchErrorFound} = this.state;
 
-        console.log("Extracted Volumes: ", this.state.volumes);
-        
+        console.log("Extracted Volumes: ", this.state.volumes); // REMOVE
         
         return (
-            <div className="MainContentWrapper flex flex-column w-100 items-center bg-white">
+            <div className="MainContentWrapper flex flex-column w-100 items-center">
                     <MainHeader headerText={HEADER_TEXT} />
                     <SearchForm 
                             setVolumes={setVolumes} 
